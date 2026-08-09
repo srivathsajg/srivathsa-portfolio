@@ -3076,6 +3076,699 @@ img {
 }
 
 /* =========================================================
+   PROJECTS
+========================================================= */
+
+.projects-section {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 560px;
+
+  display: grid;
+
+  grid-template-columns:
+    62% 38%;
+
+  background: #050505;
+
+  border-top:
+    1px solid var(--border);
+
+  border-bottom:
+    1px solid var(--border);
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.projects-content {
+  position: relative;
+
+  z-index: 5;
+
+  padding:
+    45px clamp(35px,
+      5vw,
+      75px);
+
+  background: #050505;
+}
+
+
+/* =========================================================
+   SECTION LABEL
+========================================================= */
+
+.projects-label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  margin-bottom: 22px;
+
+  color: var(--red);
+
+  font-family:
+    var(--display-font);
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.14em;
+}
+
+.projects-label span {
+  width: 34px;
+
+  height: 1px;
+
+  background: var(--red);
+
+  display: block;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.projects-title {
+  margin: 0;
+
+  color: var(--white);
+
+  font-family:
+    var(--display-font);
+
+  font-size:
+    clamp(36px,
+      4vw,
+      55px);
+
+  font-weight: 700;
+
+  line-height: 0.95;
+
+  letter-spacing:
+    -0.055em;
+}
+
+
+/* =========================================================
+   PROJECT LIST
+========================================================= */
+
+.projects-list {
+  width: 100%;
+
+  margin-top: 28px;
+}
+
+
+/* =========================================================
+   PROJECT ROW
+========================================================= */
+
+.project-row {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 76px;
+
+  display: grid;
+
+  grid-template-columns:
+    55px 1fr 55px;
+
+  align-items: center;
+
+  border-bottom:
+    1px solid rgba(255,
+      255,
+      255,
+      0.12);
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease;
+}
+
+
+/* =========================================================
+   PROJECT ROW HOVER
+========================================================= */
+
+.project-row:hover {
+  background:
+    linear-gradient(90deg,
+      rgba(255,
+        30,
+        40,
+        0.05),
+      transparent);
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.project-number {
+  color: var(--red);
+
+  font-family:
+    var(--display-font);
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  align-self: center;
+
+  position: relative;
+}
+
+.project-number::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  bottom: -10px;
+
+  width: 24px;
+
+  height: 2px;
+
+  background:
+    var(--red);
+
+  opacity: 0.8;
+}
+
+
+/* =========================================================
+   PROJECT INFO
+========================================================= */
+
+.project-info {
+  padding:
+    14px 0;
+}
+
+.project-info h3 {
+  margin: 0;
+
+  color: var(--white);
+
+  font-family:
+    var(--display-font);
+
+  font-size:
+    clamp(14px,
+      1.4vw,
+      19px);
+
+  font-weight: 500;
+
+  line-height: 1.1;
+
+  letter-spacing:
+    -0.035em;
+
+  transition:
+    color 0.25s ease;
+}
+
+.project-info p {
+  margin:
+    7px 0 0;
+
+  color: #777;
+
+  font-family:
+    var(--display-font);
+
+  font-size: 9px;
+
+  line-height: 1.2;
+
+  letter-spacing:
+    0.02em;
+}
+
+.project-row:hover .project-info h3 {
+  color: var(--red);
+}
+
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.project-arrow {
+  width: 35px;
+
+  height: 35px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #aaa;
+
+  border:
+    1px solid rgba(255,
+      255,
+      255,
+      0.15);
+
+  border-radius: 50%;
+
+  font-size: 23px;
+
+  font-family: Arial;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.project-row:hover .project-arrow {
+  color: #000;
+
+  background:
+    var(--red);
+
+  border-color:
+    var(--red);
+
+  transform:
+    rotate(45deg);
+}
+
+
+/* =========================================================
+   RIGHT VISUAL
+========================================================= */
+
+.projects-visual {
+  position: relative;
+
+  min-height: 560px;
+
+  overflow: hidden;
+
+  background:
+    #030303;
+
+  border-left:
+    1px solid rgba(255,
+      255,
+      255,
+      0.08);
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.projects-grid {
+  position: absolute;
+
+  inset: 0;
+
+  background-image:
+    linear-gradient(rgba(255,
+        255,
+        255,
+        0.035) 1px,
+      transparent 1px),
+    linear-gradient(90deg,
+      rgba(255,
+        255,
+        255,
+        0.035) 1px,
+      transparent 1px);
+
+  background-size:
+    28px 28px;
+
+  opacity: 0.55;
+}
+
+
+/* =========================================================
+   GLITCH CORE
+========================================================= */
+
+.glitch-core {
+  position: absolute;
+
+  top: 50%;
+
+  left: 50%;
+
+  width: 68%;
+
+  height: 78%;
+
+  transform:
+    translate(-50%,
+      -50%);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  filter:
+    blur(0.2px);
+}
+
+
+/* =========================================================
+   GLITCH LINES
+========================================================= */
+
+.glitch-line {
+  position: relative;
+
+  height: 5px;
+
+  border-radius: 1px;
+
+  animation:
+    glitchMove 3s steps(2) infinite;
+}
+
+
+/* BLUE */
+
+.line-1,
+.line-2,
+.line-3,
+.line-4 {
+  background:
+    linear-gradient(90deg,
+      transparent,
+      #003cff 15%,
+      #0b65ff 50%,
+      #003cff 80%,
+      transparent);
+}
+
+
+/* WHITE */
+
+.line-5,
+.line-6,
+.line-7 {
+  background:
+    linear-gradient(90deg,
+      transparent,
+      #777 15%,
+      #fff 50%,
+      #777 80%,
+      transparent);
+}
+
+
+/* RED */
+
+.line-8,
+.line-9 {
+  background:
+    linear-gradient(90deg,
+      transparent,
+      #8b0000 15%,
+      #ff2028 50%,
+      #8b0000 80%,
+      transparent);
+}
+
+
+/* BLUE AGAIN */
+
+.line-10,
+.line-11,
+.line-12,
+.line-13,
+.line-14,
+.line-15 {
+  background:
+    linear-gradient(90deg,
+      transparent,
+      #003cff 20%,
+      #165dff 50%,
+      #003cff 80%,
+      transparent);
+}
+
+
+/* DIFFERENT WIDTHS */
+
+.line-1 {
+  width: 65%;
+}
+
+.line-2 {
+  width: 90%;
+}
+
+.line-3 {
+  width: 55%;
+}
+
+.line-4 {
+  width: 80%;
+}
+
+.line-5 {
+  width: 95%;
+}
+
+.line-6 {
+  width: 70%;
+}
+
+.line-7 {
+  width: 88%;
+}
+
+.line-8 {
+  width: 65%;
+}
+
+.line-9 {
+  width: 90%;
+}
+
+.line-10 {
+  width: 72%;
+}
+
+.line-11 {
+  width: 94%;
+}
+
+.line-12 {
+  width: 58%;
+}
+
+.line-13 {
+  width: 83%;
+}
+
+.line-14 {
+  width: 68%;
+}
+
+.line-15 {
+  width: 92%;
+}
+
+
+/* =========================================================
+   GLITCH ANIMATION
+========================================================= */
+
+@keyframes glitchMove {
+
+  0% {
+    transform:
+      translateX(0) scaleX(1);
+
+    opacity: 0.65;
+  }
+
+  20% {
+    transform:
+      translateX(-8px) scaleX(0.8);
+
+    opacity: 0.8;
+  }
+
+  40% {
+    transform:
+      translateX(12px) scaleX(1.15);
+
+    opacity: 1;
+  }
+
+  60% {
+    transform:
+      translateX(-5px) scaleX(0.9);
+
+    opacity: 0.75;
+  }
+
+  80% {
+    transform:
+      translateX(9px) scaleX(1.05);
+
+    opacity: 0.9;
+  }
+
+  100% {
+    transform:
+      translateX(0) scaleX(1);
+
+    opacity: 0.65;
+  }
+}
+
+
+/* =========================================================
+   FUTURE TEXT
+========================================================= */
+
+.projects-future {
+  position: absolute;
+
+  right: 22px;
+
+  top: 50%;
+
+  transform:
+    translateY(-50%) rotate(-90deg);
+
+  color: #777;
+
+  font-family:
+    var(--display-font);
+
+  font-size: 9px;
+
+  letter-spacing:
+    0.18em;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   VISUAL GLOW
+========================================================= */
+
+.projects-visual::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+
+  top: 50%;
+
+  width: 45%;
+
+  height: 70%;
+
+  transform:
+    translate(-50%,
+      -50%);
+
+  background:
+    radial-gradient(ellipse,
+      rgba(0,
+        60,
+        255,
+        0.12),
+      transparent 70%);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .projects-section {
+    grid-template-columns: 1fr;
+
+    min-height: auto;
+  }
+
+  .projects-content {
+    padding:
+      40px 25px;
+  }
+
+  .projects-visual {
+    min-height: 330px;
+
+    border-left: none;
+
+    border-top:
+      1px solid rgba(255,
+        255,
+        255,
+        0.08);
+  }
+
+  .project-row {
+    grid-template-columns:
+      45px 1fr 45px;
+  }
+
+  .project-info h3 {
+    font-size: 14px;
+  }
+
+  .project-info p {
+    font-size: 8px;
+  }
+
+  .projects-future {
+    right: 10px;
+  }
+}
+/* =========================================================
    EXPERIENCE SECTION
 ========================================================= */
 
