@@ -1929,3 +1929,406 @@ img {
     font-size: 9px;
   }
 }
+
+/* =========================================================
+   STATS SECTION
+========================================================= */
+
+.stats-section {
+  position: relative;
+
+  min-height: 250px;
+
+  overflow: hidden;
+
+  border-bottom: 1px solid var(--border);
+
+  background:
+    linear-gradient(90deg,
+      rgba(255, 255, 255, 0.015),
+      transparent 40%,
+      rgba(255, 255, 255, 0.015));
+}
+
+/* =========================================================
+   STATS HEADER
+========================================================= */
+
+.stats-header {
+  position: relative;
+
+  z-index: 5;
+
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  border-bottom: 1px solid var(--border);
+
+  color: #555;
+
+  font-size: 7px;
+
+  letter-spacing: 0.15em;
+}
+
+.stats-line {
+  width: 25px;
+
+  height: 1px;
+
+  background: #333;
+}
+
+/* =========================================================
+   STATS GRID
+========================================================= */
+
+.stats-grid {
+  position: relative;
+
+  z-index: 5;
+
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+}
+
+/* =========================================================
+   STAT ITEM
+========================================================= */
+
+.stat-item {
+  position: relative;
+
+  min-height: 165px;
+
+  padding:
+    28px 25px;
+
+  border-right: 1px solid var(--border);
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  overflow: hidden;
+
+  transition:
+    background 0.3s ease;
+}
+
+.stat-item:last-child {
+  border-right: none;
+}
+
+.stat-item:hover {
+  background: rgba(255,
+      255,
+      255,
+      0.015);
+}
+
+/* =========================================================
+   STAT NUMBER
+========================================================= */
+
+.stat-number {
+  font-family: var(--display-font);
+
+  font-size: clamp(48px,
+      6vw,
+      90px);
+
+  line-height: 0.9;
+
+  font-weight: 700;
+
+  letter-spacing: -0.09em;
+
+  margin-bottom: 14px;
+}
+
+/* =========================================================
+   STAT COLORS
+========================================================= */
+
+.stat-red .stat-number {
+  color: var(--red);
+}
+
+.stat-cyan .stat-number {
+  color: var(--cyan);
+}
+
+.stat-green .stat-number {
+  color: var(--green);
+}
+
+.stat-blue .stat-number {
+  color: var(--blue);
+}
+
+/* =========================================================
+   STAT LABEL
+========================================================= */
+
+.stat-label {
+  max-width: 150px;
+
+  color: #777;
+
+  font-size: 8px;
+
+  line-height: 1.45;
+
+  letter-spacing: 0.1em;
+}
+
+/* =========================================================
+   STAT INDEX
+========================================================= */
+
+.stat-index {
+  position: absolute;
+
+  top: 20px;
+
+  right: 20px;
+
+  color: #3c3c3c;
+
+  font-size: 8px;
+
+  letter-spacing: 0.1em;
+}
+
+/* =========================================================
+   WIREFRAME SPHERE
+========================================================= */
+
+.stats-sphere {
+  position: absolute;
+
+  z-index: 2;
+
+  width: 190px;
+
+  height: 190px;
+
+  border-radius: 50%;
+
+  opacity: 0.16;
+
+  pointer-events: none;
+}
+
+.stats-sphere-left {
+  left: -85px;
+
+  bottom: -70px;
+}
+
+.stats-sphere-right {
+  right: -85px;
+
+  top: -70px;
+}
+
+/* =========================================================
+   SPHERE RINGS
+========================================================= */
+
+.sphere-ring {
+  position: absolute;
+
+  inset: 0;
+
+  border: 1px solid #777;
+
+  border-radius: 50%;
+}
+
+.sphere-ring-1 {
+  transform:
+    scaleX(0.35);
+}
+
+.sphere-ring-2 {
+  transform:
+    scaleX(0.55);
+}
+
+.sphere-ring-3 {
+  transform:
+    scaleX(0.75);
+}
+
+.sphere-ring-4 {
+  transform:
+    scaleY(0.4);
+}
+
+/* =========================================================
+   SPHERE LINES
+========================================================= */
+
+.sphere-line {
+  position: absolute;
+
+  left: 50%;
+
+  top: 0;
+
+  width: 1px;
+
+  height: 100%;
+
+  background: #777;
+
+  transform-origin: center;
+}
+
+.sphere-line-1 {
+  transform:
+    translateX(-50%) rotate(25deg);
+}
+
+.sphere-line-2 {
+  transform:
+    translateX(-50%) rotate(-25deg);
+}
+
+.sphere-line-3 {
+  transform:
+    translateX(-50%) rotate(90deg);
+}
+
+/* =========================================================
+   STATS FOOTER
+========================================================= */
+
+.stats-footer {
+  height: 35px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  border-top: 1px solid var(--border);
+
+  color: #444;
+
+  font-size: 7px;
+
+  letter-spacing: 0.12em;
+}
+
+.stats-status-dot {
+  width: 4px;
+
+  height: 4px;
+
+  border-radius: 50%;
+
+  background: var(--green);
+
+  box-shadow:
+    0 0 7px rgba(32,
+      255,
+      76,
+      0.8);
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+  .stat-item {
+    padding:
+      25px 15px;
+  }
+
+  .stat-number {
+    font-size: 48px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .stats-header {
+    height: 38px;
+  }
+
+  .stats-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .stat-item {
+    min-height: 130px;
+
+    padding: 20px;
+
+    border-bottom: 1px solid var(--border);
+  }
+
+  .stat-item:nth-child(2) {
+    border-right: none;
+  }
+
+  .stat-item:nth-child(3) {
+    border-bottom: none;
+  }
+
+  .stat-item:nth-child(4) {
+    border-right: none;
+
+    border-bottom: none;
+  }
+
+  .stat-number {
+    font-size: 42px;
+  }
+
+  .stat-label {
+    font-size: 7px;
+  }
+
+  .stats-sphere {
+    width: 130px;
+
+    height: 130px;
+  }
+
+  .stats-sphere-left {
+    left: -75px;
+
+    bottom: -50px;
+  }
+
+  .stats-sphere-right {
+    right: -75px;
+
+    top: -50px;
+  }
+}
