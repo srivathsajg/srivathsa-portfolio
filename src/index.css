@@ -480,3 +480,702 @@ img {
     letter-spacing: 0.08em;
   }
 }
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+  min-height: 100vh;
+
+  position: relative;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  border-bottom: 1px solid var(--border);
+
+  padding-top: 64px;
+}
+
+/* =========================================================
+   HERO GRID
+========================================================= */
+
+.hero-grid {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.22;
+
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px),
+    linear-gradient(90deg,
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px);
+
+  background-size:
+    80px 80px;
+
+  mask-image:
+    linear-gradient(to bottom,
+      black,
+      transparent 85%);
+}
+
+/* =========================================================
+   HERO TOP LABEL
+========================================================= */
+
+.hero-top-label {
+  position: absolute;
+
+  top: 100px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  color: #777;
+
+  font-size: 8px;
+
+  letter-spacing: 0.14em;
+
+  white-space: nowrap;
+
+  z-index: 5;
+}
+
+.hero-label-line {
+  width: 25px;
+  height: 1px;
+
+  background: #555;
+}
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hero-content {
+  position: relative;
+
+  z-index: 10;
+
+  width: 100%;
+
+  padding-left: clamp(7vw,
+      10vw,
+      160px);
+}
+
+/* =========================================================
+   I AM A
+========================================================= */
+
+.hero-small-title {
+  margin-bottom: 5px;
+
+  font-family: var(--display-font);
+
+  font-size: clamp(18px,
+      2vw,
+      31px);
+
+  line-height: 1;
+
+  letter-spacing: -0.06em;
+
+  color: var(--white);
+}
+
+/* =========================================================
+   MAIN TITLE
+========================================================= */
+
+.hero-title {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  margin: 0;
+
+  font-family: var(--display-font);
+
+  font-weight: 700;
+
+  line-height: 0.84;
+
+  letter-spacing: -0.09em;
+
+  text-transform: uppercase;
+}
+
+.hero-title-line {
+  position: relative;
+
+  display: block;
+
+  font-size: clamp(70px,
+      10vw,
+      165px);
+
+  color: var(--white);
+}
+
+/* Cyan title */
+
+.hero-title-cyan {
+  color: var(--cyan);
+}
+
+/* =========================================================
+   GLITCH TEXT
+========================================================= */
+
+.glitch-text {
+  position: relative;
+
+  display: inline-block;
+
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 100%;
+
+  pointer-events: none;
+
+  opacity: 0;
+}
+
+.glitch-cyan::before {
+  color: var(--red);
+}
+
+.glitch-cyan::after {
+  color: var(--blue);
+}
+
+.glitch-white::before {
+  color: var(--cyan);
+}
+
+.glitch-white::after {
+  color: var(--red);
+}
+
+.glitch-text:hover::before {
+  opacity: 0.75;
+
+  transform:
+    translate(-3px,
+      1px);
+
+  clip-path:
+    inset(20% 0 55% 0);
+}
+
+.glitch-text:hover::after {
+  opacity: 0.75;
+
+  transform:
+    translate(3px,
+      -1px);
+
+  clip-path:
+    inset(55% 0 20% 0);
+}
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.hero-description {
+  margin-top: 45px;
+
+  font-family: var(--body-font);
+
+  font-size: clamp(12px,
+      1.1vw,
+      16px);
+
+  line-height: 1.55;
+
+  color: #9b9b9b;
+
+  letter-spacing: -0.02em;
+}
+
+.hero-description span {
+  color: var(--red);
+}
+
+/* =========================================================
+   HERO ARROW
+========================================================= */
+
+.hero-arrow {
+  position: absolute;
+
+  top: 160px;
+  right: 10vw;
+
+  z-index: 12;
+
+  color: var(--white);
+
+  animation:
+    heroArrowFloat 4s ease-in-out infinite;
+}
+
+@keyframes heroArrowFloat {
+
+  0%,
+  100% {
+    transform: translate(0,
+        0);
+  }
+
+  50% {
+    transform: translate(5px,
+        7px);
+  }
+}
+
+/* =========================================================
+   HERO BOTTOM
+========================================================= */
+
+.hero-bottom {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  bottom: 24px;
+
+  z-index: 20;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-end;
+
+  padding:
+    0 clamp(20px,
+      4vw,
+      70px);
+}
+
+/* =========================================================
+   SCROLL
+========================================================= */
+
+.hero-scroll {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color: #777;
+
+  font-size: 8px;
+
+  letter-spacing: 0.1em;
+}
+
+.scroll-dot {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: var(--red);
+
+  box-shadow:
+    0 0 6px rgba(255,
+      32,
+      40,
+      0.8);
+
+  animation:
+    scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+
+  0%,
+  100% {
+    opacity: 0.5;
+
+    transform: scale(0.85);
+  }
+
+  50% {
+    opacity: 1;
+
+    transform: scale(1.15);
+  }
+}
+
+/* =========================================================
+   LOCATION
+========================================================= */
+
+.hero-location {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-end;
+
+  gap: 4px;
+
+  color: #666;
+
+  font-size: 8px;
+
+  letter-spacing: 0.12em;
+}
+
+.hero-location strong {
+  color: var(--white);
+
+  font-family: var(--display-font);
+
+  font-size: 11px;
+
+  letter-spacing: 0.06em;
+}
+
+/* =========================================================
+   DIGITAL PLANET
+========================================================= */
+
+.digital-planet {
+  position: absolute;
+
+  z-index: 3;
+
+  width: min(68vw,
+      950px);
+
+  height: min(68vw,
+      950px);
+
+  right: -15vw;
+
+  top: 52%;
+
+  transform:
+    translateY(-50%);
+
+  border-radius: 50%;
+
+  overflow: hidden;
+
+  background:
+
+    radial-gradient(circle at 48% 46%,
+      #ff5656 0%,
+      #ff242b 18%,
+      #d90e16 42%,
+      #8f080d 62%,
+      #340204 79%,
+      #050505 80%);
+
+  box-shadow:
+
+    -25px 0 100px rgba(255,
+      20,
+      25,
+      0.12);
+
+  opacity: 0.92;
+
+  animation:
+    planetFloat 12s ease-in-out infinite;
+}
+
+@keyframes planetFloat {
+
+  0%,
+  100% {
+    transform:
+      translateY(-50%) rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translateY(calc(-50% + 8px)) rotate(0.5deg);
+  }
+}
+
+/* =========================================================
+   PLANET GLOW
+========================================================= */
+
+.planet-glow {
+  position: absolute;
+
+  inset: -10%;
+
+  border-radius: 50%;
+
+  background:
+
+    radial-gradient(circle,
+      rgba(255,
+        55,
+        55,
+        0.15),
+      transparent 62%);
+
+  filter: blur(20px);
+}
+
+/* =========================================================
+   PLANET NOISE
+========================================================= */
+
+.planet-noise {
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0.5;
+
+  background-image:
+
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='planetnoise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23planetnoise)'/%3E%3C/svg%3E");
+
+  mix-blend-mode: screen;
+}
+
+/* =========================================================
+   PLANET LINES
+========================================================= */
+
+.planet-lines {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+
+    repeating-linear-gradient(to bottom,
+      transparent 0,
+      transparent 6px,
+      rgba(0,
+        0,
+        0,
+        0.12) 7px);
+
+  mix-blend-mode: multiply;
+}
+
+/* =========================================================
+   PLANET GLITCH BARS
+========================================================= */
+
+.planet-glitch {
+  position: absolute;
+
+  height: 3px;
+
+  background: #ff343b;
+
+  opacity: 0.65;
+
+  filter: blur(0.3px);
+
+  animation:
+    planetGlitch 3s steps(2) infinite;
+}
+
+.planet-glitch-one {
+  width: 35%;
+
+  top: 38%;
+
+  left: 10%;
+}
+
+.planet-glitch-two {
+  width: 24%;
+
+  top: 63%;
+
+  right: 12%;
+
+  animation-delay: 1.2s;
+}
+
+@keyframes planetGlitch {
+
+  0%,
+  88%,
+  100% {
+    transform:
+      translateX(0);
+
+    opacity: 0.15;
+  }
+
+  90% {
+    transform:
+      translateX(22px);
+
+    opacity: 0.8;
+  }
+
+  93% {
+    transform:
+      translateX(-15px);
+
+    opacity: 0.45;
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+  .hero-content {
+    padding-left: 7vw;
+  }
+
+  .hero-arrow {
+    right: 6vw;
+
+    top: 170px;
+  }
+
+  .digital-planet {
+    width: 72vw;
+    height: 72vw;
+
+    right: -25vw;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100svh;
+
+    padding-top: 58px;
+  }
+
+  .hero-top-label {
+    top: 90px;
+
+    font-size: 7px;
+
+    gap: 7px;
+  }
+
+  .hero-label-line {
+    width: 12px;
+  }
+
+  .hero-content {
+    padding-left: 20px;
+
+    padding-right: 20px;
+
+    margin-top: -30px;
+  }
+
+  .hero-small-title {
+    font-size: 15px;
+  }
+
+  .hero-title {
+    line-height: 0.88;
+  }
+
+  .hero-title-line {
+    font-size: clamp(48px,
+        14vw,
+        78px);
+  }
+
+  .hero-description {
+    margin-top: 30px;
+
+    font-size: 10px;
+  }
+
+  .hero-arrow {
+    top: 155px;
+
+    right: 15px;
+  }
+
+  .hero-arrow svg {
+    width: 55px;
+    height: 55px;
+  }
+
+  .digital-planet {
+    width: 110vw;
+    height: 110vw;
+
+    right: -48vw;
+
+    top: 56%;
+
+    opacity: 0.7;
+  }
+
+  .hero-bottom {
+    bottom: 18px;
+
+    padding:
+      0 20px;
+  }
+
+  .hero-scroll {
+    font-size: 7px;
+  }
+
+  .hero-location {
+    font-size: 7px;
+  }
+
+  .hero-location strong {
+    font-size: 9px;
+  }
+}
