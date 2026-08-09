@@ -3202,7 +3202,8 @@ img {
   position: relative;
 
   width: 100%;
-
+  text-decoration: none;
+  color: inherit;
   min-height: 76px;
 
   display: grid;
@@ -5623,4 +5624,1484 @@ img {
 
     text-align: center;
   }
+}
+
+/* =========================================================
+   PROJECT DETAIL PAGES
+========================================================= */
+
+.project-detail-page {
+  position: relative;
+
+  min-height: 100vh;
+
+  padding-top: 70px;
+
+  background:
+    #050505;
+
+  color: var(--white);
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.project-back {
+  position: fixed;
+
+  top: 90px;
+
+  left: 35px;
+
+  z-index: 100;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding:
+    9px 13px;
+
+  border:
+    1px solid rgba(255,
+      255,
+      255,
+      0.18);
+
+  background:
+    rgba(5,
+      5,
+      5,
+      0.9);
+
+  color: #aaa;
+
+  font-family:
+    var(--display-font);
+
+  font-size: 7px;
+
+  letter-spacing: 0.08em;
+
+  backdrop-filter:
+    blur(10px);
+
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.project-back:hover {
+  color: #000;
+
+  background:
+    var(--red);
+
+  border-color:
+    var(--red);
+}
+
+
+/* =========================================================
+   DETAIL HERO
+========================================================= */
+
+.project-detail-hero {
+  position: relative;
+
+  min-height: 610px;
+
+  padding:
+    150px clamp(35px,
+      9vw,
+      140px) 80px;
+
+  border-bottom:
+    1px solid var(--border);
+
+  overflow: hidden;
+}
+
+
+/* Technical grid */
+
+.project-detail-hero::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(rgba(255,
+        255,
+        255,
+        0.035) 1px,
+      transparent 1px),
+    linear-gradient(90deg,
+      rgba(255,
+        255,
+        255,
+        0.035) 1px,
+      transparent 1px);
+
+  background-size:
+    45px 45px;
+
+  opacity: 0.5;
+}
+
+
+/* Red glow */
+
+.project-detail-hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 600px;
+
+  height: 600px;
+
+  right: -250px;
+
+  top: -180px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(circle,
+      rgba(255,
+        30,
+        40,
+        0.16),
+      transparent 70%);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   DETAIL LABEL
+========================================================= */
+
+.project-detail-label {
+  position: relative;
+
+  z-index: 5;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 25px;
+
+  color: var(--red);
+
+  font-family:
+    var(--display-font);
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.15em;
+}
+
+.project-detail-label::before {
+  content: "";
+
+  width: 30px;
+
+  height: 1px;
+
+  background:
+    var(--red);
+}
+
+
+/* =========================================================
+   DETAIL HERO TITLE
+========================================================= */
+
+.project-detail-hero h1 {
+  position: relative;
+
+  z-index: 5;
+
+  margin: 0;
+
+  max-width: 1000px;
+
+  color: var(--white);
+
+  font-family:
+    var(--display-font);
+
+  font-size:
+    clamp(48px,
+      8vw,
+      115px);
+
+  line-height: 0.84;
+
+  font-weight: 700;
+
+  letter-spacing:
+    -0.085em;
+}
+
+.project-detail-hero h1 span {
+  color: var(--cyan);
+}
+
+
+/* =========================================================
+   HERO DESCRIPTION
+========================================================= */
+
+.project-detail-intro {
+  position: relative;
+
+  z-index: 5;
+
+  max-width: 650px;
+
+  margin:
+    40px 0 0;
+
+  color: #888;
+
+  font-family:
+    var(--body-font);
+
+  font-size:
+    clamp(10px,
+      1vw,
+      13px);
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   HERO META
+========================================================= */
+
+.project-detail-meta {
+  position: relative;
+
+  z-index: 5;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3,
+      minmax(130px,
+        200px));
+
+  gap: 1px;
+
+  margin-top: 50px;
+}
+
+.project-detail-meta div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+
+  min-height: 60px;
+
+  padding:
+    12px 18px;
+
+  border-left:
+    1px solid rgba(255,
+      255,
+      255,
+      0.15);
+}
+
+.project-detail-meta span {
+  color: #555;
+
+  font-family:
+    var(--display-font);
+
+  font-size: 6px;
+
+  letter-spacing: 0.1em;
+}
+
+.project-detail-meta strong {
+  color: #bbb;
+
+  font-family:
+    var(--display-font);
+
+  font-size: 8px;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   DETAIL SECTION
+========================================================= */
+
+.project-detail-section {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    110px 1fr;
+
+  width: 100%;
+
+  min-height: 330px;
+
+  padding:
+    70px clamp(30px,
+      8vw,
+      120px);
+
+  border-bottom:
+    1px solid var(--border);
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   SECTION NUMBER
+========================================================= */
+
+.project-section-number {
+  color: var(--red);
+
+  font-family:
+    var(--display-font);
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.05em;
+
+  padding-top: 8px;
+}
+
+.project-section-number::after {
+  content: "";
+
+  display: block;
+
+  width: 25px;
+
+  height: 1px;
+
+  margin-top: 10px;
+
+  background:
+    var(--red);
+}
+
+
+/* =========================================================
+   SECTION CONTENT
+========================================================= */
+
+.project-section-content {
+  max-width: 1000px;
+}
+
+.project-section-label {
+  margin-bottom: 18px;
+
+  color: #666;
+
+  font-family:
+    var(--display-font);
+
+  font-size: 7px;
+
+  letter-spacing: 0.14em;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.project-section-content h2 {
+  max-width: 850px;
+
+  margin:
+    0 0 25px;
+
+  color: var(--white);
+
+  font-family:
+    var(--display-font);
+
+  font-size:
+    clamp(32px,
+      4.5vw,
+      62px);
+
+  line-height: 0.95;
+
+  font-weight: 700;
+
+  letter-spacing:
+    -0.07em;
+}
+
+.project-section-content h2 span {
+  color: var(--cyan);
+}
+
+
+/* =========================================================
+   SECTION PARAGRAPHS
+========================================================= */
+
+.project-section-content>p {
+  max-width: 760px;
+
+  margin:
+    0 0 18px;
+
+  color: #8a8a8a;
+
+  font-family:
+    var(--body-font);
+
+  font-size:
+    clamp(10px,
+      1vw,
+      13px);
+
+  line-height: 1.8;
+}
+
+.project-section-content>p strong {
+  color: var(--white);
+}
+
+
+/* =========================================================
+   FEATURE GRID
+========================================================= */
+
+.project-feature-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2,
+      minmax(250px,
+        1fr));
+
+  gap: 1px;
+
+  margin-top: 35px;
+
+  border-top:
+    1px solid rgba(255,
+      255,
+      255,
+      0.1);
+
+  border-left:
+    1px solid rgba(255,
+      255,
+      255,
+      0.1);
+}
+
+.project-feature-grid article {
+  position: relative;
+
+  min-height: 145px;
+
+  padding:
+    22px;
+
+  border-right:
+    1px solid rgba(255,
+      255,
+      255,
+      0.1);
+
+  border-bottom:
+    1px solid rgba(255,
+      255,
+      255,
+      0.1);
+
+  transition:
+    background 0.25s ease;
+}
+
+.project-feature-grid article:hover {
+  background:
+    rgba(255,
+      48,
+      56,
+      0.035);
+}
+
+.project-feature-grid article>span {
+  display: block;
+
+  margin-bottom: 15px;
+
+  color: var(--red);
+
+  font-family:
+    var(--display-font);
+
+  font-size: 7px;
+}
+
+.project-feature-grid h3 {
+  margin:
+    0 0 10px;
+
+  color: #eee;
+
+  font-family:
+    var(--display-font);
+
+  font-size: 10px;
+
+  font-weight: 600;
+}
+
+.project-feature-grid p {
+  margin: 0;
+
+  color: #666;
+
+  font-size: 8px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   TECHNOLOGY GRID
+========================================================= */
+
+.project-tech-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4,
+      minmax(130px,
+        1fr));
+
+  gap: 8px;
+
+  margin-top: 35px;
+}
+
+.project-tech {
+  min-height: 90px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  padding:
+    15px;
+
+  border:
+    1px solid rgba(255,
+      255,
+      255,
+      0.1);
+
+  background:
+    rgba(255,
+      255,
+      255,
+      0.015);
+
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.project-tech:hover {
+  border-color:
+    var(--cyan);
+
+  background:
+    rgba(0,
+      217,
+      239,
+      0.035);
+}
+
+.project-tech strong {
+  color: #ddd;
+
+  font-family:
+    var(--display-font);
+
+  font-size: 8px;
+
+  font-weight: 500;
+}
+
+.project-tech small {
+  color: #555;
+
+  font-family:
+    var(--display-font);
+
+  font-size: 6px;
+
+  letter-spacing: 0.08em;
+}
+
+
+/* =========================================================
+   ARCHITECTURE FLOW
+========================================================= */
+
+.architecture-flow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 40px;
+
+  overflow-x: auto;
+
+  padding-bottom: 10px;
+}
+
+.architecture-box {
+  min-width: 150px;
+
+  min-height: 100px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  padding:
+    15px;
+
+  border:
+    1px solid rgba(255,
+      255,
+      255,
+      0.14);
+
+  background:
+    #080808;
+}
+
+.architecture-box small {
+  color: var(--red);
+
+  font-family:
+    var(--display-font);
+
+  font-size: 6px;
+}
+
+.architecture-box strong {
+  color: #ddd;
+
+  font-family:
+    var(--display-font);
+
+  font-size: 9px;
+
+  font-weight: 500;
+}
+
+.architecture-box span {
+  color: #555;
+
+  font-family:
+    var(--display-font);
+
+  font-size: 6px;
+}
+
+.architecture-arrow {
+  flex-shrink: 0;
+
+  color: var(--cyan);
+
+  font-size: 20px;
+}
+
+
+/* =========================================================
+   TERMINAL
+========================================================= */
+
+.fraud-terminal {
+  max-width: 700px;
+
+  margin-top: 35px;
+
+  border:
+    1px solid rgba(255,
+      255,
+      255,
+      0.14);
+
+  background:
+    #020202;
+
+  box-shadow:
+    0 0 50px rgba(0,
+      0,
+      0,
+      0.4);
+}
+
+.terminal-header {
+  min-height: 34px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  padding:
+    0 12px;
+
+  border-bottom:
+    1px solid rgba(255,
+      255,
+      255,
+      0.1);
+
+  color: #555;
+
+  font-family:
+    var(--display-font);
+
+  font-size: 6px;
+
+  letter-spacing: 0.1em;
+}
+
+.terminal-header span {
+  width: 6px;
+
+  height: 6px;
+
+  border-radius: 50%;
+
+  background:
+    #444;
+}
+
+.terminal-header span:nth-child(1) {
+  background:
+    var(--red);
+}
+
+.terminal-header span:nth-child(2) {
+  background:
+    #777;
+}
+
+.terminal-header span:nth-child(3) {
+  background:
+    var(--cyan);
+}
+
+.terminal-body {
+  min-height: 180px;
+
+  padding:
+    25px;
+
+  background:
+    repeating-linear-gradient(0deg,
+      transparent,
+      transparent 7px,
+      rgba(255,
+        255,
+        255,
+        0.018) 8px);
+}
+
+.terminal-body p {
+  margin:
+    0 0 11px;
+
+  color: #777;
+
+  font-family:
+    var(--display-font);
+
+  font-size: 8px;
+
+  line-height: 1.4;
+}
+
+.terminal-success {
+  color: var(--green) !important;
+}
+
+
+/* =========================================================
+   SECURITY LIST
+========================================================= */
+
+.security-list {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2,
+      1fr);
+
+  gap: 1px;
+
+  margin-top: 35px;
+
+  border-top:
+    1px solid rgba(255,
+      255,
+      255,
+      0.1);
+
+  border-left:
+    1px solid rgba(255,
+      255,
+      255,
+      0.1);
+}
+
+.security-list>div {
+  min-height: 130px;
+
+  padding:
+    20px;
+
+  border-right:
+    1px solid rgba(255,
+      255,
+      255,
+      0.1);
+
+  border-bottom:
+    1px solid rgba(255,
+      255,
+      255,
+      0.1);
+}
+
+.security-list span {
+  display: block;
+
+  margin-bottom: 13px;
+
+  color: var(--red);
+
+  font-family:
+    var(--display-font);
+
+  font-size: 7px;
+}
+
+.security-list strong {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #ddd;
+
+  font-family:
+    var(--display-font);
+
+  font-size: 9px;
+
+  font-weight: 500;
+}
+
+.security-list p {
+  margin: 0;
+
+  color: #666;
+
+  font-family:
+    var(--body-font);
+
+  font-size: 8px;
+
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   RESQONE PANEL
+========================================================= */
+
+.resqone-panel {
+  margin-top: 35px;
+
+  padding:
+    25px;
+
+  border:
+    1px solid rgba(255,
+      48,
+      56,
+      0.3);
+
+  background:
+    linear-gradient(135deg,
+      rgba(255,
+        48,
+        56,
+        0.04),
+      transparent);
+}
+
+.resqone-status {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 25px;
+
+  color: var(--red);
+
+  font-family:
+    var(--display-font);
+
+  font-size: 7px;
+
+  letter-spacing: 0.1em;
+}
+
+.resqone-dot {
+  width: 7px;
+
+  height: 7px;
+
+  border-radius: 50%;
+
+  background:
+    var(--red);
+
+  box-shadow:
+    0 0 12px rgba(255,
+      48,
+      56,
+      0.7);
+}
+
+.resqone-flow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  overflow-x: auto;
+}
+
+.resqone-flow>div:not(.architecture-arrow) {
+  min-width: 140px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+
+  padding:
+    15px;
+
+  border:
+    1px solid rgba(255,
+      255,
+      255,
+      0.12);
+}
+
+.resqone-flow small {
+  color: var(--red);
+
+  font-size: 6px;
+}
+
+.resqone-flow strong {
+  color: #ddd;
+
+  font-family:
+    var(--display-font);
+
+  font-size: 8px;
+}
+
+.resqone-flow span {
+  color: #555;
+
+  font-size: 6px;
+}
+
+
+/* =========================================================
+   FRAUD / RESQONE SECTION ACCENT
+========================================================= */
+
+.fraud-section {
+  background:
+    linear-gradient(90deg,
+      rgba(0,
+        217,
+        239,
+        0.015),
+      transparent 50%);
+}
+
+.resqone-section {
+  background:
+    linear-gradient(90deg,
+      rgba(255,
+        48,
+        56,
+        0.02),
+      transparent 55%);
+}
+
+
+/* =========================================================
+   OUTCOME STATS
+========================================================= */
+
+.outcome-stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3,
+      minmax(150px,
+        1fr));
+
+  gap: 1px;
+
+  margin-top: 40px;
+
+  border-top:
+    1px solid rgba(255,
+      255,
+      255,
+      0.1);
+
+  border-left:
+    1px solid rgba(255,
+      255,
+      255,
+      0.1);
+}
+
+.outcome-stats div {
+  min-height: 100px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  padding:
+    20px;
+
+  border-right:
+    1px solid rgba(255,
+      255,
+      255,
+      0.1);
+
+  border-bottom:
+    1px solid rgba(255,
+      255,
+      255,
+      0.1);
+}
+
+.outcome-stats strong {
+  color: var(--cyan);
+
+  font-family:
+    var(--display-font);
+
+  font-size: 16px;
+
+  letter-spacing:
+    -0.04em;
+}
+
+.outcome-stats span {
+  color: #555;
+
+  font-family:
+    var(--display-font);
+
+  font-size: 6px;
+
+  letter-spacing: 0.08em;
+}
+
+
+/* =========================================================
+   DETAIL FOOTER
+========================================================= */
+
+.project-detail-footer {
+  position: relative;
+
+  min-height: 450px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding:
+    70px clamp(30px,
+      9vw,
+      140px);
+
+  overflow: hidden;
+
+  border-bottom:
+    1px solid var(--border);
+
+  background:
+    #030303;
+}
+
+.project-detail-footer::before {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+
+  height: 500px;
+
+  right: -180px;
+
+  top: 50%;
+
+  transform:
+    translateY(-50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(circle,
+      rgba(0,
+        217,
+        239,
+        0.12),
+      transparent 70%);
+}
+
+.project-detail-footer h2 {
+  position: relative;
+
+  z-index: 5;
+
+  margin:
+    10px 0 40px;
+
+  color: var(--white);
+
+  font-family:
+    var(--display-font);
+
+  font-size:
+    clamp(50px,
+      8vw,
+      110px);
+
+  line-height: 0.85;
+
+  letter-spacing:
+    -0.08em;
+}
+
+.project-detail-footer h2 span {
+  color: var(--red);
+}
+
+.project-detail-footer .project-back {
+  position: relative;
+
+  top: auto;
+
+  left: auto;
+
+  width: fit-content;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .project-detail-page {
+    padding-top: 60px;
+  }
+
+  .project-back {
+    position: absolute;
+
+    top: 75px;
+
+    left: 20px;
+  }
+
+  .project-detail-hero {
+    min-height: 560px;
+
+    padding:
+      135px 25px 55px;
+  }
+
+  .project-detail-hero h1 {
+    font-size:
+      clamp(42px,
+        12vw,
+        70px);
+  }
+
+  .project-detail-intro {
+    margin-top: 30px;
+
+    font-size: 9px;
+  }
+
+  .project-detail-meta {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+
+    margin-top: 35px;
+  }
+
+  .project-detail-meta div {
+    min-height: auto;
+
+    padding:
+      10px 12px;
+  }
+
+
+  /* SECTION */
+
+  .project-detail-section {
+    grid-template-columns: 45px 1fr;
+
+    padding:
+      45px 20px;
+
+    min-height: auto;
+  }
+
+  .project-section-number {
+    font-size: 8px;
+  }
+
+  .project-section-content h2 {
+    font-size:
+      clamp(28px,
+        8vw,
+        45px);
+  }
+
+
+  /* FEATURE GRID */
+
+  .project-feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* TECH */
+
+  .project-tech-grid {
+    grid-template-columns:
+      repeat(2,
+        1fr);
+  }
+
+
+  /* SECURITY */
+
+  .security-list {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* ARCHITECTURE */
+
+  .architecture-flow {
+    align-items: stretch;
+
+    flex-direction: column;
+  }
+
+  .architecture-arrow {
+    align-self: center;
+
+    transform:
+      rotate(90deg);
+  }
+
+  .architecture-box {
+    width: 100%;
+  }
+
+
+  /* OUTCOME */
+
+  .outcome-stats {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* FOOTER */
+
+  .project-detail-footer {
+    min-height: 350px;
+
+    padding:
+      50px 25px;
+  }
+
+  .project-detail-footer h2 {
+    font-size:
+      clamp(45px,
+        12vw,
+        70px);
+  }
+
+
+  /* RESQONE */
+
+  .resqone-flow {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .resqone-flow>div:not(.architecture-arrow) {
+    width: 100%;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 450px) {
+
+  .project-detail-section {
+    grid-template-columns: 35px 1fr;
+
+    padding:
+      40px 15px;
+  }
+
+  .project-detail-hero {
+    padding:
+      130px 20px 50px;
+  }
+
+  .project-detail-hero h1 {
+    font-size: 40px;
+  }
+
+  .project-tech-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-feature-grid article {
+    min-height: 130px;
+  }
+
+  .project-detail-footer {
+    padding:
+      45px 20px;
+  }
+}
+
+.back-to-projects {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 14px 24px;
+
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  color: #ffffff;
+
+  font-family: var(--mono-font);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.25s ease,
+    color 0.25s ease,
+    background 0.25s ease;
+}
+
+.back-to-projects:hover {
+  color: #ff2028;
+  border-color: #ff2028;
+  background: rgba(255, 32, 40, 0.05);
 }
