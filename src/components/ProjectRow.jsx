@@ -1,15 +1,13 @@
-import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 
-function ProjectRow({ project, index, onHover }) {
+function ProjectRow({ project, index }) {
   return (
     <motion.div
       className="project-row"
-      onMouseEnter={() => onHover(project)}
-      onMouseLeave={() => onHover(null)}
       initial={{
         opacity: 0,
-        y: 30,
+        y: 25,
       }}
       whileInView={{
         opacity: 1,
@@ -20,8 +18,8 @@ function ProjectRow({ project, index, onHover }) {
         amount: 0.2,
       }}
       transition={{
-        duration: 0.6,
-        delay: index * 0.06,
+        duration: 0.5,
+        delay: index * 0.05,
       }}
     >
       <div className="project-number">
@@ -29,39 +27,24 @@ function ProjectRow({ project, index, onHover }) {
       </div>
 
       <div className="project-main">
-        <h3 className="project-title">
+        <h3>
           {project.title}
         </h3>
 
-        <div className="project-meta">
-          <span>{project.category}</span>
-
-          <span className="project-separator">
-            /
-          </span>
-
-          <span>{project.technologies}</span>
-        </div>
+        <span>
+          {project.technologies}
+        </span>
       </div>
 
-      <motion.div
-        className="project-arrow"
-        whileHover={{
-          x: 6,
-          y: -6,
-        }}
-        transition={{
-          duration: 0.2,
-        }}
-      >
+      <div className="project-category">
+        {project.category}
+      </div>
+
+      <div className="project-arrow">
         <ArrowUpRight
-          size={25}
+          size={20}
           strokeWidth={1}
         />
-      </motion.div>
-
-      <div className="project-index">
-        PROJECT_{project.number}
       </div>
     </motion.div>
   );

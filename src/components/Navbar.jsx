@@ -1,83 +1,164 @@
-import { ArrowUpRight, Menu } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { ArrowUpRight } from "lucide-react";
+
+const navItems = [
+  {
+    name: "HOME",
+    id: "home",
+  },
+  {
+    name: "ABOUT",
+    id: "about",
+  },
+  {
+    name: "WORK",
+    id: "work",
+  },
+  {
+    name: "SKILLS",
+    id: "skills",
+  },
+  {
+    name: "EXPERIENCE",
+    id: "experience",
+  },
+  {
+    name: "CONTACT",
+    id: "contact",
+  },
+];
 
 function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
-  const navigation = [
-    { name: "HOME", href: "#home" },
-    { name: "ABOUT", href: "#about" },
-    { name: "WORK", href: "#work" },
-    { name: "SKILLS", href: "#skills" },
-    { name: "EXPERIENCE", href: "#experience" },
-    { name: "CONTACT", href: "#contact" },
-  ];
+  useEffect(() => {
+    const sections = navItems
+      .map((item) => document.getElementById(item.id))
+      .filter(Boolean);
+
+    if (!sections.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleSections = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort(
+            (a, b) =>
+              b.intersectionRatio -
+              a.intersectionRatio
+          );
+
+        if (visibleSections.length > 0) {
+          setActiveSection(
+            visibleSections[0].target.id
+          );
+        }
+      },
+      {
+        root: null,
+
+        /*
+         * The active section is determined
+         * around the middle of the screen.
+         */
+        rootMargin:
+          "-35% 0px -50% 0px",
+
+        threshold: [
+          0,
+          0.1,
+          0.25,
+          0.5,
+          0.75,
+          1,
+        ],
+      }
+    );
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        observer.unobserve(section);
+      });
+    };
+  }, []);
+
+  const handleNavigation = (id) => {
+    const section = document.getElementById(id);
+
+    if (!section) return;
+
+    setActiveSection(id);
+
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+
+    window.history.replaceState(
+      null,
+      "",
+      `#${id}`
+    );
+  };
 
   return (
     <header className="navbar">
-      <div className="navbar-inner">
-        {/* Logo */}
-        <a href="#home" className="navbar-logo">
-          SRIVATHSA JG
-        </a>
 
-        {/* Desktop Navigation */}
-        <nav className="navbar-links">
-          {navigation.map((item, index) => (
-            <a
-              key={item.name}
-              href={item.href}
-              className={`navbar-link ${
-                index === 0 ? "navbar-link-active" : ""
-              }`}
-            >
-              {item.name}
-            </a>
-          ))}
-        </nav>
+      {/* LOGO */}
 
-        {/* Connect */}
-        <a href="#contact" className="navbar-connect">
-          <span className="navbar-connect-dot"></span>
+      <button
+        className="navbar-logo"
+        onClick={() =>
+          handleNavigation("home")
+        }
+      >
+        SRIVATHSA JG
+      </button>
 
-          <span>LET'S CONNECT</span>
+      {/* NAVIGATION */}
 
-          <ArrowUpRight size={13} strokeWidth={1.5} />
-        </a>
-
-        {/* Mobile menu button */}
-        <button
-          className="navbar-mobile-button"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Open navigation menu"
-        >
-          <Menu size={22} strokeWidth={1.5} />
-        </button>
-      </div>
-
-      {/* Mobile menu */}
-      <div className={`mobile-menu ${menuOpen ? "mobile-menu-open" : ""}`}>
-        {navigation.map((item) => (
-          <a
-            key={item.name}
-            href={item.href}
-            className="mobile-menu-link"
-            onClick={() => setMenuOpen(false)}
+      <nav className="navbar-links">
+        {navItems.map((item) => (
+          <button
+            key={item.id}
+            className={`navbar-link ${
+              activeSection === item.id
+                ? "active"
+                : ""
+            }`}
+            onClick={() =>
+              handleNavigation(item.id)
+            }
           >
             {item.name}
-          </a>
+          </button>
         ))}
+      </nav>
 
-        <a
-          href="#contact"
-          className="mobile-menu-connect"
-          onClick={() => setMenuOpen(false)}
-        >
-          <span className="navbar-connect-dot"></span>
+      {/* CONNECT */}
+
+      <button
+        className="navbar-connect"
+        onClick={() =>
+          handleNavigation("contact")
+        }
+      >
+        <span className="navbar-status"></span>
+
+        <span>
           LET'S CONNECT
-          <ArrowUpRight size={15} />
-        </a>
-      </div>
+        </span>
+
+        <ArrowUpRight
+          size={15}
+          strokeWidth={1.5}
+        />
+      </button>
+
     </header>
   );
 }

@@ -1,55 +1,6 @@
 import { motion } from "framer-motion";
+import skills from "../data/skills";
 
-const skills = [
-  {
-    name: "JAVA",
-    color: "white",
-  },
-  {
-    name: "REACT",
-    color: "cyan",
-  },
-  {
-    name: "PYTHON",
-    color: "white",
-  },
-  {
-    name: "NODE.JS",
-    color: "white",
-  },
-  {
-    name: "SPRING BOOT",
-    color: "white",
-  },
-  {
-    name: "MONGODB",
-    color: "green",
-  },
-  {
-    name: "MYSQL",
-    color: "white",
-  },
-  {
-    name: "GIT",
-    color: "white",
-  },
-  {
-    name: "AI / ML",
-    color: "cyan",
-  },
-  {
-    name: "BLOCKCHAIN",
-    color: "red",
-  },
-  {
-    name: "TAILWIND",
-    color: "white",
-  },
-  {
-    name: "EXPRESS",
-    color: "white",
-  },
-];
 
 function Skills() {
   return (
@@ -60,6 +11,7 @@ function Skills() {
       <div className="skills-background-grid"></div>
 
       <div className="skills-header">
+
         <motion.div
           className="section-label"
           initial={{
@@ -72,10 +24,6 @@ function Skills() {
           }}
           viewport={{
             once: true,
-            amount: 0.3,
-          }}
-          transition={{
-            duration: 0.6,
           }}
         >
           CAPABILITIES
@@ -85,7 +33,7 @@ function Skills() {
           className="skills-title"
           initial={{
             opacity: 0,
-            y: 35,
+            y: 30,
           }}
           whileInView={{
             opacity: 1,
@@ -93,25 +41,22 @@ function Skills() {
           }}
           viewport={{
             once: true,
-            amount: 0.3,
-          }}
-          transition={{
-            duration: 0.8,
-            delay: 0.1,
           }}
         >
           TOOLS I BUILD WITH
         </motion.h2>
+
       </div>
 
       <div className="skills-cloud">
+
         {skills.map((skill, index) => (
           <motion.div
             key={skill.name}
             className={`skill-item skill-${skill.color}`}
             initial={{
               opacity: 0,
-              y: 25,
+              y: 20,
             }}
             whileInView={{
               opacity: 1,
@@ -119,7 +64,6 @@ function Skills() {
             }}
             viewport={{
               once: true,
-              amount: 0.15,
             }}
             transition={{
               duration: 0.5,
@@ -132,6 +76,7 @@ function Skills() {
             {skill.name}
           </motion.div>
         ))}
+
       </div>
 
       <div className="skills-bottom">
@@ -141,6 +86,7 @@ function Skills() {
 
         <span>CONTINUOUSLY EVOLVING</span>
       </div>
+
     </section>
   );
 }
