@@ -1,50 +1,72 @@
 const experience = [
   {
-    id: 1,
-    year: "2025 - PRESENT",
-    role: "FULL STACK DEVELOPER",
-    company: "Independent / Personal Projects",
+    number: "01",
+    year: "2023",
+    title: "STARTED B.E. CSE",
     description:
-      "Building modern full-stack applications using React, Node.js, Spring Boot, databases and REST APIs.",
-    technologies: [
-      "React",
-      "Node.js",
-      "Spring Boot",
-      "MySQL",
-    ],
+      "Started my Computer Science journey at Adichunchanagiri Institute of Technology (2023–2027), building fundamentals in programming, OOP, DBMS, Data Structures & Algorithms, and Computer Networks.",
     color: "red",
+    icon: "⌘",
   },
 
   {
-    id: 2,
-    year: "2024 - 2025",
-    role: "BACKEND DEVELOPER",
-    company: "Project Development",
+    number: "02",
+    year: "2024 – 2025",
+    title: "MOVED INTO SOFTWARE DEVELOPMENT",
     description:
-      "Developing backend services, REST APIs, authentication systems and database-driven applications.",
-    technologies: [
-      "Java",
-      "Spring Boot",
-      "Hibernate",
-      "MySQL",
-    ],
+      "Expanded into Java, Python, JavaScript, C++, HTML/CSS, React, Node.js + Express, Django, MySQL, MongoDB, PostgreSQL, REST APIs, JWT authentication, and Git/GitHub.",
     color: "cyan",
+    icon: "</>",
   },
 
   {
-    id: 3,
-    year: "2023 - 2024",
-    role: "FRONTEND DEVELOPER",
-    company: "Web Development",
+    number: "03",
+    year: "2025",
+    title: "STARTED BUILDING REAL PROJECTS",
     description:
-      "Creating responsive interfaces and interactive digital experiences with modern frontend technologies.",
-    technologies: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "React",
-    ],
+      "Built projects such as the Club Management System using Django, PostgreSQL, authentication, role-based access, event management, and email notifications.",
     color: "green",
+    icon: "↗",
+  },
+
+  {
+    number: "04",
+    year: "2026",
+    title: "BLOCKCHAIN + HEALTHCARE",
+    description:
+      "Built a Blockchain-Enabled Secure Healthcare System combining MERN, Solidity, Ethereum, Hardhat, IPFS, RBAC, authentication, encryption, blockchain verification, and healthcare workflows.",
+    color: "red",
+    icon: "◇",
+  },
+
+  {
+    number: "05",
+    year: "HACKATHON",
+    title: "AI / ADAPTIVE LEARNING",
+    description:
+      "Built an adaptive learning platform that analyzed student performance, recommended personalized learning paths and courses, generated adaptive quizzes, adjusted difficulty, and included tab-switch monitoring.",
+    color: "green",
+    icon: "✦",
+  },
+
+  {
+    number: "06",
+    year: "2026",
+    title: "JAVA + SPRING BOOT",
+    description:
+      "Built a Smart Banking & Fraud Detection System using Java, Spring Boot, Spring Security, Hibernate/JPA, MySQL, Redis, Kafka, Python ML, and React with Random Forest fraud detection.",
+    color: "cyan",
+    icon: "☕",
+  },
+
+  {
+    number: "07",
+    year: "2026",
+    title: "GOOGLE STUDENT AMBASSADOR",
+    description:
+      "Became a Google Student Ambassador, adding technology community involvement and student-focused initiatives to my technical journey.",
+    color: "red",
+    icon: "G",
   },
 ];
 

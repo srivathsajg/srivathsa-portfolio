@@ -8,8 +8,7 @@ import {
 
 function RGBRing() {
   return (
-    <div className="rgb-ring-container">
-      <div className="rgb-ring rgb-ring-green"></div>
+    <div className="rgb-ring-wrapper">
 
       <div className="rgb-ring rgb-ring-blue"></div>
 
@@ -27,6 +26,7 @@ function RGBRing() {
       <div className="rgb-ring-code">
         SIGNAL / ACTIVE
       </div>
+
     </div>
   );
 }
@@ -35,12 +35,23 @@ function Contact() {
   return (
     <section
       id="contact"
-      className="contact-section page-section"
+      className="contact-section"
     >
+
+      {/* =====================================================
+          CONTACT CONTENT
+          ===================================================== */}
+
       <div className="contact-content">
 
-        {/* LEFT */}
+        {/* ===================================================
+            LEFT
+            =================================================== */}
+
         <div className="contact-info">
+
+          {/* SECTION LABEL */}
+
           <motion.div
             className="section-label"
             initial={{
@@ -61,6 +72,9 @@ function Contact() {
           >
             GET IN TOUCH
           </motion.div>
+
+
+          {/* TITLE */}
 
           <motion.h2
             className="contact-title"
@@ -86,6 +100,9 @@ function Contact() {
             TOGETHER.
           </motion.h2>
 
+
+          {/* CONTACT DETAILS */}
+
           <motion.div
             className="contact-details"
             initial={{
@@ -105,62 +122,93 @@ function Contact() {
               delay: 0.25,
             }}
           >
+
+            {/* EMAIL */}
+
             <a
-              href="mailto:srivathsa.jg@gmail.com"
+              href="mailto:srivathsajg34@gmail.com"
               className="contact-detail"
             >
-              <Mail size={17} strokeWidth={1} />
+              <Mail
+                size={17}
+                strokeWidth={1}
+              />
 
               <span>
-                srivathsa.jg@gmail.com
+                srivathsajg34@gmail.com
               </span>
             </a>
 
+
+            {/* PHONE */}
+
             <a
-              href="tel:+916360123456"
+              href="tel:+919019792834"
               className="contact-detail"
             >
-              <Phone size={17} strokeWidth={1} />
+              <Phone
+                size={17}
+                strokeWidth={1}
+              />
 
               <span>
-                +91 6360 123 456
+                +91 9019792834
               </span>
             </a>
+
+
+            {/* LOCATION */}
 
             <div className="contact-detail">
+
               <MapPin
                 size={17}
                 strokeWidth={1}
               />
 
               <span>
-                Karnataka, India
+                Tumakuru, Karnataka, India
               </span>
+
             </div>
+
           </motion.div>
 
+
+          {/* =================================================
+              START A CONVERSATION
+              ================================================= */}
+
           <motion.a
-            href="mailto:srivathsa.jg@gmail.com"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=srivathsajg34@gmail.com&su=Let's%20Work%20Together"
+            target="_blank"
+            rel="noopener noreferrer"
             className="contact-button"
+
             initial={{
               opacity: 0,
               y: 20,
             }}
+
             whileInView={{
               opacity: 1,
               y: 0,
             }}
+
             viewport={{
               once: true,
             }}
+
             transition={{
               duration: 0.6,
               delay: 0.4,
             }}
+
             whileHover={{
               x: 5,
             }}
           >
+
             <span>
               START A CONVERSATION
             </span>
@@ -169,33 +217,52 @@ function Contact() {
               size={17}
               strokeWidth={1}
             />
+
           </motion.a>
+
         </div>
 
-        {/* RIGHT */}
+
+        {/* ===================================================
+            RIGHT — RGB RING
+            =================================================== */}
+
         <motion.div
           className="contact-visual"
+
           initial={{
             opacity: 0,
             scale: 0.95,
           }}
+
           whileInView={{
             opacity: 1,
             scale: 1,
           }}
+
           viewport={{
             once: true,
             amount: 0.2,
           }}
+
           transition={{
             duration: 1,
           }}
         >
+
           <RGBRing />
+
         </motion.div>
+
       </div>
 
+
+      {/* =====================================================
+          CONTACT FOOTER
+          ===================================================== */}
+
       <div className="contact-footer">
+
         <span>
           CHANNEL / OPEN
         </span>
@@ -205,7 +272,9 @@ function Contact() {
         <span>
           RESPONSE TIME / 24H
         </span>
+
       </div>
+
     </section>
   );
 }

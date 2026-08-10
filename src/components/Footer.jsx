@@ -86,7 +86,7 @@ function Footer() {
           </span>
 
           <a
-            href="https://github.com/"
+            href="https://github.com/srivathsajg"
             target="_blank"
             rel="noreferrer"
           >
@@ -95,7 +95,7 @@ function Footer() {
           </a>
 
           <a
-            href="https://www.linkedin.com/"
+            href="https://www.linkedin.com/in/srivathsa-j-g-3a7169355/"
             target="_blank"
             rel="noreferrer"
           >
@@ -103,7 +103,7 @@ function Footer() {
             <ArrowUpRight size={12} />
           </a>
 
-          <a href="mailto:srivathsa.jg@gmail.com">
+          <a href="mailto:srivathsajg34@gmail.com">
             EMAIL
             <ArrowUpRight size={12} />
           </a>
