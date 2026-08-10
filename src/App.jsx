@@ -15,6 +15,8 @@ import BlockchainHealthcare from "./pages/BlockchainHealthcare";
 import Jarvis from "./pages/Jarvis";
 import Portfolio from "./pages/Portfolio";
 
+import ScrollToTop from "./components/ScrollToTop";
+
 
 function Home() {
   return (
@@ -40,6 +42,7 @@ function Home() {
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop /> 
 
       <Routes>
 

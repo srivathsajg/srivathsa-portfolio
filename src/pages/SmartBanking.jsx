@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import BackToProjects from "../components/BackToProjects";
 
 function SmartBanking() {
   return (
@@ -227,12 +228,7 @@ function SmartBanking() {
           <span>SAFER BANKING.</span>
         </h2>
 
-        <Link
-          to="/"
-          className="project-back"
-        >
-          ← BACK TO PORTFOLIO
-        </Link>
+        <BackToProjects />
 
       </section>
 
