@@ -590,23 +590,10 @@ img {
 }
 
 .hero-label-line {
-  width: 38px;
-
+  width: 25px;
   height: 1px;
 
-  background:
-    linear-gradient(90deg,
-      transparent,
-      #777);
-
-  opacity: 0.9;
-}
-
-.hero-label-line:last-child {
-  background:
-    linear-gradient(90deg,
-      #777,
-      transparent);
+  background: #555;
 }
 
 /* =========================================================
